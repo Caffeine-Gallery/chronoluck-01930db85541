@@ -1,0 +1,12 @@
+type GameState = 
+ record {
+   gameId: nat;
+   isComplete: bool;
+   reward: opt text;
+   startTime: int;
+ };
+service : {
+  getGameStatus: (nat) -> (opt GameState) query;
+  getTimeRemaining: (nat) -> (int) query;
+  startGame: () -> (nat);
+}
